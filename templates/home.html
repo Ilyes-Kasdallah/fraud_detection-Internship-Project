@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Home Page</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@500&family=Caveat:wght@500&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Poppins:wght@100;200;300;400;500&family=Ubuntu:wght@300;400;500;700&family=Ysabeau:wght@1;100;200;300;400;500;600;700;800;900&display=swap');
+
+    body {
+        background-color: #e8e8e8;
+        display: flex;
+        flex-direction: column;
+        
+        height: 100vh;
+        margin: 10px;
+    }
+    img {
+          width: 70%;
+          background-color: transparent;
+          aspect-ratio: 3/2;
+          object-fit: contain;
+          margin-top: 0%;
+         
+          border-radius: 0.9em;
+
+    }
+    .logo{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 20px;
+      margin-top: 2%;
+      
+      margin-right: 5%;
+     
+    }
+
+
+
+    .logout {
+      --black: rgba(24, 20, 20, 0.987);
+      --ch-black: #141414;
+      --eer-black: #1b1b1b;
+      --night-rider: #2e2e2e;
+      --white: #ffffff;
+      --af-white: #f3f3f3;
+      --ch-white: #e1e1e1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 45px;
+      height: 45px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition-duration: .3s;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+      background-color: var(--night-rider); 
+    }
+      .sign {
+        width: 100%;
+        transition-duration: .3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .sign svg {
+        width: 17px;
+      }
+      
+      .sign svg path {
+        fill: var(--af-white);
+      }
+     
+      .text {
+        position: absolute;
+        right: 0%;
+        width: 0%;
+        opacity: 0;
+        font-family: 'Montserrat Alternates', sans-serif;
+        color: #f5f6fa;
+        font-size: 1.2em;
+        font-weight: 600;
+        transition-duration: .3s;
+      }
+      
+      .logout:hover {
+        width: 125px;
+        border-radius: 5px;
+        transition-duration: .3s;
+      }
+      
+      .logout:hover .sign {
+        width: 30%;
+        transition-duration: .3s;
+        padding-left: 7px;
+      }
+     
+      .logout:hover .text {
+        opacity: 1;
+        width: 70%;
+        transition-duration: .3s;
+        padding-right: 8px;
+      }
+      
+      .logout:active {
+        transform: translate(2px ,2px);
+      }
+    
+      .all {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        transition: all 0.5s ease;
+      }
+      .title {
+         color: #ecf0f3;
+          font-family: 'Montserrat Alternates', sans-serif;
+          width: 100%;
+          margin: 15px auto;
+          padding: 30px;
+          background-color: rgba(24, 20, 20, 0.987);
+          font-size: 120%;
+         
+          border: 1px solid #505050;
+          border-radius: 9px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+     
+       
+      .container {
+          font-family: 'Montserrat Alternates', sans-serif;
+          color: #090909;
+          padding: 30px;
+          font-size: 18px;
+          border-radius: 0.5em;
+          background: #e8e8e8;
+          border: 1px solid #e8e8e8;
+          transition: all .3s;
+          box-shadow: 6px 6px 12px #c5c5c5,
+               -6px -6px 12px #ffffff;
+          width: 100%;
+        
+         display:flex;
+         flex-direction:column;
+         align-items:center;
+          transition: all 0.5s ease;
+  
+      }
+      .container:hover {
+        border: 1px solid white;
+      }
+      
+      .container:active {
+        box-shadow: 4px 4px 12px #c5c5c5,
+                   -4px -4px 12px #ffffff;
+      }
+      
+      
+      #fileInput {
+        margin-top: 10px;
+        width: 100%;
+      }
+      
+      #cameraButton {
+        margin-top: 10px;
+        padding: 8px 12px;
+        background-color: transparent;
+        color: black;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        border:1px solid;
+      
+      }
+      
+     
+      #inputImage {
+        max-width: 100%;
+        height: auto;
+        margin-top: 10px;
+      }
+      
+      .submit {
+        margin-top: 20px;
+        text-align: center;
+      }
+      
+      .submit-btn {
+        padding: 10px 20px;
+        background-color: #27ae60;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      .submit-btn:hover {
+        background-color: #219651;
+      }
+      
+      .column:last-child {
+        margin-left: 30px;
+      }
+      
+      #resultArea {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: white;
+        box-shadow: 3px 3px 6px #c5c5c5;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+      }
+      
+      #inputImage, #outputImage {
+        max-width: 100%;
+      }
+      #captureButton {
+        display:flex;
+        align-items:lex-start;
+        
+      }   
+
+     .submit-btn {
+          width: 9em;
+          height: 3em;
+          border-radius: 30em;
+       
+          font-size: 15px;
+          font-family: 'Montserrat Alternates', sans-serif;
+          border: none;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+          box-shadow: 6px 6px 12px #c5c5c5,
+                      -6px -6px 12px #ffffff;
+          font: bold;
+          display: block;
+          margin: 20px auto;
+          
+         }
+      
+        
+        @media (min-width: 540px) {
+          .sm\:w-half {
+            width: 50%;
+          }
+        }
+      
+         .submit-btn::before {
+          content: '';
+          width: 0;
+          height: 3em;
+          border-radius: 30em;
+          position: absolute;
+          top: 0;
+          left: 0;   
+          background-image: linear-gradient(to right, #7c7a87 0%, #f2f3f4 100%);
+          transition: .5s ease;
+          display: block;
+          z-index: -1;
+         }
+         
+         .submit-btn:hover::before {
+          width: 9em;
+         }
+  
+      h1 {
+          
+          margin-bottom: 70px;
+          color: #ffffff;
+          font-size: 60px;
+          font-family: 'Montserrat Alternates', sans-serif;
+          text-align: center;
+      }
+  h2{
+    margin-bottom: 70px;
+    color: #000;
+    font-size: 40px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    text-align: center;
+  }
+      p {
+          text-align: justify;
+      }
+  
+      form {
+          display: flex;
+          flex-direction: column;
+      }
+  
+      .form-group {
+          margin-bottom: 20px;
+      }
+    
+
+      #imagePreview {
+        max-width: 100%;
+        max-height: 300px;
+        border-radius: 2em ;
+    }
+   
+    .upload {
+      border-bottom: 1px solid #ccc; 
+      padding-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      align-content:space-around;
+  }
+  
+
+
+.upload h3 {
+    margin-top: 0; 
+    margin-bottom: 20px; 
+    font-size: 30px;
+  
+}
+
+#imageInput {
+    margin-bottom: 10px;
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;
+}
+
+#captureButton {
+  color: #fff;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background:  rgba(24, 20, 20, 0.987);
+  border: 1px solid #e8e8e8;
+  transition: all .3s;
+  box-shadow: 6px 6px 12px #c5c5c5,
+              -6px -6px 12px #ffffff;
+
+}
+#uploadimg {
+  color: #090909;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all .3s;
+  box-shadow: 6px 6px 12px #c5c5c5,
+              -6px -6px 12px #ffffff;
+  margin-buttom : 20%;
+}
+
+#cameraCaptureButton {
+  color: #fff;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background:  rgba(24, 20, 20, 0.987);
+  border: 1px solid #e8e8e8;
+  transition: all .3s;
+  box-shadow: 6px 6px 12px #c5c5c5,
+              -6px -6px 12px #ffffff;
+
+}
+
+#imagePreview {
+    max-width: 100%;
+    margin-top: 10px;
+}
+.result {
+    padding-top: 20px;
+    font-size: 20px;
+  }
+
+    </style>
+  </head>
+  <body>
+    
+    <div class="logo">
+      <div>
+       <!--  <img src="C:\Users\ilyes\OneDrive\Bureau\New_Project\registration\templates\img.jpg" alt="image"> -->  
+      </div>
+      
+          <button class="logout">
+              <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+
+              <div class="text"><a href="{% url 'logout' %}" >Logout</a></div>
+          </button>
+    </div> 
+    <div class="all">
+        
+      <div class="title">
+          <h1> Fraud Detection </h1>
+          <p>
+           The Fraud Detection in Drug Packaging project utilizes OCR techniques to identify text from images of drug packets, targeting counterfeit drugs in the pharmaceutical industry. By leveraging machine learning and image processing algorithms, the system extracts essential information like batch numbers and expiration dates for analysis. The project aims to enhance drug authentication and ensure public safety by swiftly detecting anomalies and verifying drug authenticity through cross-referencing with authoritative databases. This innovative approach builds trust in the pharmaceutical supply chain and protects consumers from potential health risks.
+          </p>
+      </div>
+       
+     
+    <div class="container">
+        <div class="upload">
+          <h3>Upload or Capture Image</h3>
+          <form method="post" id="imageForm" enctype="multipart/form-data">
+                  <input type="file" id="imageInput" accept="image/*">
+                  <button type="button" id="captureButton">Capture Image with Camera</button>
+                  <div id="cameraContainer">
+                    <video id="cameraFeed" autoplay></video>
+                    <button id="cameraCaptureButton">Capture</button>
+              </div>
+                  <button  id= "uploadimg" type="submit">Upload Image</button>
+           </form>  
+                  
+                  <img id="imagePreview" src="#" alt="">
+                      <br>
+        </div>
+ <div class="result">
+          <h2>Result</h2>
+            <div id="resultArea">
+
+               {% if extracted_text %}
+                 <div>
+                     <p>Extracted Text:</p>
+                     <pre>{{ extracted_text }}</pre>
+                 </div>
+                {% endif %}
+    
+                {% if error_message %}
+                      <p>{{ error_message }}</p>
+                {% endif %}
+           <!--  The result will be displayed here --> 
+
+       
+            </div>
+       
+        </div>
+      </div>
+       
+      </div>
+    
+     </div>
+  
+ 
+
+  <script>
+
+        const imageInput = document.getElementById('imageInput');
+        const captureButton = document.getElementById('captureButton');
+        const imagePreview = document.getElementById('imagePreview');
+        const cameraFeed = document.getElementById('cameraFeed');
+        const cameraCaptureButton = document.getElementById('cameraCaptureButton');
+        const cameraContainer = document.getElementById('cameraContainer');
+        const submitButton = document.getElementById('uploadimg');
+        let stream;
+
+        // Handle image selection from file input
+        imageInput.addEventListener('change', function(event) {
+            const selectedImage = event.target.files[0];
+            if (selectedImage) {
+                imagePreview.src = URL.createObjectURL(selectedImage);
+                cameraContainer.style.display = 'none';
+            }
+        });
+
+        // Handle capturing image from camera
+        captureButton.addEventListener('click', function() {
+            cameraContainer.style.display = 'block';
+            
+            const constraints = {
+                video: true
+            };
+
+            navigator.mediaDevices.getUserMedia(constraints)
+                .then(function(videoStream) {
+                    stream = videoStream;
+                    cameraFeed.srcObject = videoStream;
+                })
+                .catch(function(error) {
+                    console.error('Error accessing camera:', error);
+                });
+        });
+
+        // Handle capturing image from camera feed
+        cameraCaptureButton.addEventListener('click', function() {
+            const canvas = document.createElement('canvas');
+            canvas.width = cameraFeed.videoWidth;
+            canvas.height = cameraFeed.videoHeight;
+            const context = canvas.getContext('2d');
+            context.drawImage(cameraFeed, 0, 0, canvas.width, canvas.height);
+            const capturedImage = canvas.toDataURL('image/png');
+
+            imagePreview.src = capturedImage;
+            cameraContainer.style.display = 'none';
+
+            // Stop the camera stream
+            if (stream) {
+                const tracks = stream.getTracks();
+                tracks.forEach(track => track.stop());
+            }
+        });
+
+   
+
+       
+    
+        submitButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            
+            if (imagePreview.src) {
+                const formData = new FormData(document.getElementById('imageForm'));
+                const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    
+                fetch('/extract_text/', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-CSRFToken': csrfToken,
+                    },
+                })
+                .then(response => response.text())
+                .then(data => {
+                    // Update the result area with the extracted text
+                    resultArea.innerHTML = '<div><p>Extracted Text:</p><pre>' + data + '</pre></div>';
+
+                })  
+                .catch(error => {
+                    console.error('Error extracting text:', error);
+                });
+            }
+        });
+    
+
+  function dataURLtoBlob(dataURL) {
+      const arr = dataURL.split(',');
+      const mime = arr[0].match(/:(.*?);/)[1];
+      const bstr = atob(arr[1]);
+      let n = bstr.length;
+      const u8arr = new Uint8Array(n);
+      while (n--) {
+          u8arr[n] = bstr.charCodeAt(n);
+      }
+      return new Blob([u8arr], { type: mime });
+  }
+ 
+
+  </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
